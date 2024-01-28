@@ -16,10 +16,10 @@ def calculate_coordinates(screen_width, screen_height):
     return x, y
 
 def main():
-    # Cool text message by xFlippy
+    # Cool text message
     print("=========================================")
     print(" Automated fishing by xFlippy")
-    print(" happy autofishing!")
+    print(" Happy autofishing!")
     print("=========================================")
 
     screen_width, screen_height = pyautogui.size()
@@ -37,22 +37,20 @@ def main():
         status = "Running" if running else "Paused"
         print(f"{status}. Press 's' to start/pause.")
 
-    keyboard.add_hotkey('s', toggle_running)
+    keyboard.add_hotkey('s', toggle_running) #change hotkey if you want
 
-    print("AutoFish. Press 's' to start/pause.")
+    print("autofish loaded. Press 's' to start/pause.") #hotkey
 
     while True:
         if running:
             current_color = get_pixel_color(*target_coords)
 
             if current_color == target_color:
-                print("Color matched. Starting continuous left click actions...")
 
                 while running and get_pixel_color(*target_coords) == target_color:
                     pyautogui.click()
                     time.sleep(0.1)
 
-                print("Color disappeared. Waiting 0.5 seconds and clicking again...")
 
                 time.sleep(0.5)
                 pyautogui.click()
@@ -63,7 +61,6 @@ def main():
                 last_detection_time = time.time()
 
             elif time.time() - last_detection_time > max_inactive_time:
-                print("Target color not detected for more than 6 seconds. Clicking once...")
                 pyautogui.click()
                 last_detection_time = time.time()
 
