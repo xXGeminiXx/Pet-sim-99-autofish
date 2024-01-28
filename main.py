@@ -31,9 +31,9 @@ def main():
         status = "Running" if running else "Paused"
         print(f"{status}. Press 's' to start/pause.")
 
-    keyboard.add_hotkey('s', toggle_running)
+    keyboard.add_hotkey('s', toggle_running) #change hotkey if you want
 
-    print("Script loaded. Press 's' to start/pause.")
+    print("Script loaded. Press 's' to start/pause.") #hotkey
 
     while True:
         if running:
