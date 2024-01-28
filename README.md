@@ -2,22 +2,22 @@ Use the predefined key (default 's') to toggle the fishing automation on or off.
 
 ## Configuration
 
-You can modify the `config.json` file to change settings like target pixel color and keyboard shortcuts.
+You can modify the keybind when starting the script to start stop the grind.
 
 ## Contributing
 
-Your contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for how to submit your improvements.
+Your contributions are welcome! Please make a request to submit your improvements.
 
 ## License
 
 This project is licensed under the MIT License - see [LICENSE.md](LICENSE.md) for more details.
 
-## Acknowledgments
+## Why
 
-- Hat tip to all contributors and supporters.
-- Inspired by the vibrant community of Pet Sim 99.
+- I was tired to click all the time.
+- i wanted to grind overnight.
 
 ## Contact
 
 - Twitter - [@gewoon_aardbei](https://twitter.com/@gewoon_aardbej)
-- Project Link: [https://github.com/xflipperkast/pet-sim-99-autofish](https://github.com/yourusername/pet-sim-99-autofish)
+- Project Link: [https://github.com/xflipperkast/Pet-sim-99-autofish](https://github.com/xflipperkast/Pet-sim-99-autofish)
