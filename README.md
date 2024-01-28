@@ -46,5 +46,5 @@ This project is licensed under the MIT License - see [LICENSE.md](LICENSE.md) fo
 
 ## Contact
 
-- Twitter - [@gewoon_aardbei](https://twitter.com/@gewoon_aardbej)
+- Twitter - [@gewoon_aardbei](https://twitter.com/@gewoon_aardbei)
 - Project Link: [https://github.com/xflipperkast/Pet-sim-99-autofish](https://github.com/xflipperkast/Pet-sim-99-autofish)
