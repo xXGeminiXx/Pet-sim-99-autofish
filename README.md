@@ -14,6 +14,8 @@ Welcome to the Pet Sim 99 AutoFish script repository. This script is designed to
 
 Ensure you have the following installed:
 - Python 3.x
+
+pip install
 - PyAutoGUI
 - Pillow
 - Keyboard
