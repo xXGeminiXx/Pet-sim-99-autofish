@@ -16,6 +16,12 @@ def calculate_coordinates(screen_width, screen_height):
     return x, y
 
 def main():
+    # Cool text message by xFlippy
+    print("=========================================")
+    print(" Automated fishing by xFlippy")
+    print(" happy autofishing!")
+    print("=========================================")
+
     screen_width, screen_height = pyautogui.size()
     target_coords = calculate_coordinates(screen_width, screen_height)
 
@@ -31,9 +37,9 @@ def main():
         status = "Running" if running else "Paused"
         print(f"{status}. Press 's' to start/pause.")
 
-    keyboard.add_hotkey('s', toggle_running) #change hotkey if you want
+    keyboard.add_hotkey('s', toggle_running)
 
-    print("Script loaded. Press 's' to start/pause.") #hotkey
+    print("AutoFish. Press 's' to start/pause.")
 
     while True:
         if running:
