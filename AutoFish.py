@@ -37,9 +37,9 @@ def main():
         status = "Running" if running else "Paused"
         print(f"{status}. Press 's' to start/pause.")
 
-    keyboard.add_hotkey('s', toggle_running) #change hotkey if you want
+    keyboard.add_hotkey('p', toggle_running) #change hotkey if you want
 
-    print("autofish loaded. Press 's' to start/pause.") #hotkey
+    print("autofish loaded. Press 'p' to start/pause.") #hotkey
 
     while True:
         if running:
