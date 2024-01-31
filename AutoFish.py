@@ -34,42 +34,25 @@ class AutoFishingGUI:
         self.root.title("Automated Fishing")
         self.root.geometry("300x200")
         self.root.attributes("-topmost", True)
+        self.status_label = tk.Label(self.root, text="Disabled", fg="red").pack()
+        self.set_hotkey_button = tk.Button(self.root, text="Set New Hotkey", command=self.set_new_hotkey).pack()
+        self.current_hotkey_label = tk.Label(self.root, text=f"Current Hotkey: {self.current_hotkey}").pack()
 
-        self.status_label = tk.Label(self.root, text="Disabled", fg="red")
-        self.status_label.pack()
-
-        self.set_hotkey_button = tk.Button(self.root, text="Set New Hotkey", command=self.set_new_hotkey)
-        self.set_hotkey_button.pack()
-
-        self.current_hotkey_label = tk.Label(self.root, text=f"Current Hotkey: {self.current_hotkey}")
-        self.current_hotkey_label.pack()
-
-        # Footer
         footer_frame = tk.Frame(self.root)
         footer_frame.pack(side=tk.BOTTOM, fill=tk.X)
+        tk.Label(footer_frame, text="Made by: xFlippy").pack(side=tk.LEFT)
 
-        made_by_label = tk.Label(footer_frame, text="Made by: xFlippy")
-        made_by_label.pack(side=tk.LEFT)
-
-        # Load images for buttons
-        youtube_img = ImageTk.PhotoImage(Image.open("imgs/youtube.png").resize((20, 20)))
-        twitter_img = ImageTk.PhotoImage(Image.open("imgs/twitter.png").resize((20, 20)))
-        github_img = ImageTk.PhotoImage(Image.open("imgs/github.png").resize((20, 20)))
-
-        # Buttons with images
-        youtube_button = tk.Button(footer_frame, image=youtube_img, command=lambda: webbrowser.open("https://www.youtube.com/channel/UCHIk4-IrVb6351-NjHbrRow"))
-        youtube_button.image = youtube_img
-        youtube_button.pack(side=tk.LEFT)
-
-        twitter_button = tk.Button(footer_frame, image=twitter_img, command=lambda: webbrowser.open("https://twitter.com/gewoon_aardbei"))
-        twitter_button.image = twitter_img
-        twitter_button.pack(side=tk.LEFT)
-
-        github_button = tk.Button(footer_frame, image=github_img, command=lambda: webbrowser.open("https://github.com/xflipperkast"))
-        github_button.image = github_img
-        github_button.pack(side=tk.LEFT)
-
+        self.setup_social_buttons(footer_frame)
         keyboard.add_hotkey(self.current_hotkey, lambda: self.gui_queue.put(self.toggle_running))
+
+    def setup_social_buttons(self, footer_frame):
+        for social, url in [("youtube", "https://www.youtube.com/channel/UCHIk4-IrVb6351-NjHbrRow"),
+                            ("twitter", "https://twitter.com/gewoon_aardbei"),
+                            ("github", "https://github.com/xflipperkast")]:
+            img = ImageTk.PhotoImage(Image.open(f"imgs/{social}.png").resize((20, 20)))
+            button = tk.Button(footer_frame, image=img, command=lambda u=url: webbrowser.open(u))
+            button.image = img
+            button.pack(side=tk.LEFT)
 
     def toggle_running(self):
         self.running = not self.running
